@@ -1,0 +1,8 @@
+query ListingsQuery{
+  listings(filter: "{\"city\": \"Cypress\"}") {
+		address {
+      city
+    }
+    listPrice
+  }
+}

@@ -1,0 +1,187 @@
+scalar Date
+
+type Query {
+    listings(filter: String): [Listing]
+}
+
+type Listing {
+    privateRemarks: String
+    property: Property
+    address: Address
+    mlsId: Float
+    showingInstructions: String
+    showingContactName: String
+    showingContactPhone: String
+    office: Office
+    leaseTerm: String
+    disclaimer: String
+    listDate: Date
+    agent: Agent
+    modified: Date
+    school: School
+    photos: [String]
+    listPrice: Float
+    originalListPrice: Float
+    internetAddressDisplay: Boolean
+    listingId: String
+    mls: Mls
+    internetEntireListingDisplay: Boolean
+    geo: Geo
+    tax: Tax
+    coAgent: CoAgent
+    sales: Sales
+    contractDate: Date
+    leaseType: String
+    virtualTourUrl: String
+    remarks: String
+    association: Association
+}
+
+type Geo {
+    county: String
+    lat: Float
+    lng: Float
+    marketArea: String
+    directions: String
+}
+
+type Tax {
+    taxYear: Float
+    taxAnnualAmount: Float
+    id: String
+}
+
+type CoAgent {
+    lastName: String
+    firstName: String
+    id: String
+    contact: Contact
+}
+
+type Sales {
+    closeDate: Date
+    office: Office
+    closePrice: Float
+    agent: Agent
+}
+
+type Association {
+    fee: Float
+    frequency: String
+    name: String
+    amenities: String
+}
+
+type Mls {
+    status: String
+    area: String
+    daysOnMarket: Float
+    originalEntryTimestamp: Date
+    originatingSystemName: String
+    statusText: String
+    areaMinor: String
+}
+
+type School {
+    middleSchool: String
+    highSchool: String
+    elementarySchool: String
+    district: String
+}
+
+type Agent {
+    lastName: String
+    firstName: String
+    id: String
+    contact: Contact
+}
+
+type Office {
+    contact: Contact
+    name: String
+    servingName: String
+    brokerid: String
+}
+
+type Contact {
+    email: String
+    office: String
+    cell: String
+}
+
+type Parking {
+    leased: String
+    spaces: Float
+    description: String
+}
+
+type Address {
+    crossStreet: String
+    state: String
+    country: String
+    postalCode: String
+    streetName: String
+    streetNumberText: String
+    city: String
+    streetNumber: Float
+    full: String
+    unit: String
+}
+
+type Property {
+    rooms: [Room]
+    roof: String
+    cooling: String
+    style: String
+    area: Float
+    bathsFull: Float
+    bathsHalf: Float
+    stories: Float
+    fireplaces: Float
+    flooring: String
+    heating: String
+    foundation: String
+    poolFeatures: String
+    laundryFeatures: String
+    occupantName: String
+    ownerName: String
+    lotDescription: String
+    lotSizeAcres: Float
+    subType: String
+    bedrooms: Float
+    interiorFeatures: String
+    lotSize: String
+    areaSource: String
+    maintenanceExpense: Float
+    additionalRooms: String
+    exteriorFeatures: String
+    water: String
+    view: String
+    lotSizeArea: Float
+    subdivision: String
+    construction: String
+    subTypeRaw: String
+    parking: Parking
+    lotSizeAreaUnits: String
+    type: String
+    garageSpaces: Float
+    bathsThreeQuarter: Float
+    accessibility: String
+    occupantType: String
+    yearBuilt: Float
+}
+
+type Room {
+    length: Float
+    features: String
+    area: Float
+    width: Float
+    typeText: String
+    type: String
+    dimension: String
+    description: String
+}
+
+schema {
+    query: Query
+}
